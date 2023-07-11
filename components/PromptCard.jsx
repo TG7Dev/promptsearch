@@ -2,11 +2,11 @@
 
 import { useState } from "react";
 import Image from "next/image";
-import { SessionProvider } from "next-auth/react";
+import { useSession } from "next-auth/react";
 import { usePathname, useRouter } from "next/navigation";
 
 const PromptCard = ({ post, handleEdit, handleDelete, handleTagClick }) => {
-  const { data: session } = SessionProvider();
+  const { data: session } = useSession();
   const pathName = usePathname();
   const router = useRouter();
 
